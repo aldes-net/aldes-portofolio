@@ -283,7 +283,13 @@
   </div>
 
   <!-- MUSIC -->
-  <audio autoplay loop>
+  <audio id="music" loop>
+    <source src="musik.mp3" type="audio/mp3">
+</audio>
+
+<button onclick="document.getElementById('music').play()">
+🎵 Play Music
+</button>
     <source src="musik.mp3" type="audio/mp3">
   </audio>
 
@@ -292,10 +298,10 @@
   <h1>ATENG</h1>
 
     <ul>
-      <li><a href="#">Home</a></li>
-      <li><a href="#">Skill</a></li>
-      <li><a href="#">Project</a></li>
-      <li><a href="#">Contact</a></li>
+      <li><a href="#home">Home</a></li>
+      <li><a href="#skills">Skill</a></li>
+      <li><a href="#project">Project</a></li>
+      <li><a href="#contact">Contact</a></li>
     </ul>
   </nav>
 
@@ -316,11 +322,11 @@
       aldes adalah manusia dan manusia adalah aldes.
     </p>
 
-    <button class="btn">
-      Explore Portfolio
-    </button>
+    <a href="#skills" class="btn">
+Explore Portfolio
+</a>
 
-  </section>
+  </section id="skills">
 
   <!-- SKILL -->
   <section>
@@ -330,11 +336,27 @@
     <div class="cards">
 
       <div class="card">
-        <h3>Desain Grafis</h3>
-        <p>
-          Membuat struktur website modern dan professional.
-        </p>
-      </div>
+        <div class="card">
+<h3>Web Development</h3>
+<p>
+Membangun website modern, responsif, dan profesional menggunakan HTML, CSS, dan JavaScript.
+</p>
+</div>
+
+<div class="card">
+<h3>Graphic Design</h3>
+<p>
+Mendesain poster, logo, banner, dan antarmuka dengan tampilan modern.
+</p>
+</div>
+
+<div class="card">
+<h3>Cyber Security</h3>
+<p>
+Mempelajari keamanan jaringan, ethical hacking, serta perlindungan sistem dari ancaman siber.
+</p>
+</div>
+
 
       <div class="card">
         <h3>Owner Ekport</h3>
@@ -364,12 +386,14 @@
     // LOADING SCREEN
     window.addEventListener("load",function(){
 
-      setTimeout(() => {
+     setTimeout(()=>{
+    document.getElementById("loader").style.opacity="0";
 
+    setTimeout(()=>{
         document.getElementById("loader").style.display="none";
+    },500);
 
-      },500);
-
+},1800);
     });
 
     // TYPING EFFECT
