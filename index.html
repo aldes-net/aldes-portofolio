@@ -3,20 +3,15 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-  <title>Futuristic Portfolio</title>
+  <title>Futuristic Portfolio - Muhammad Aldes</title>
 
   <!-- FONT -->
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
-
-  <!-- ICON -->
-  <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
 
   <!-- PARTICLE JS -->
   <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
 
   <style>
-
     *{
       margin:0;
       padding:0;
@@ -50,9 +45,10 @@
       align-items:center;
       flex-direction:column;
       z-index:99999;
+      transition: opacity 0.5s;
     }
 
-    .loader-text{
+   .loader-text{
       font-size:30px;
       color:#00f7ff;
       letter-spacing:5px;
@@ -60,12 +56,8 @@
     }
 
     @keyframes blink{
-      0%,100%{
-        opacity:1;
-      }
-      50%{
-        opacity:0.3;
-      }
+      0%,100%{ opacity:1; }
+      50%{ opacity:0.3; }
     }
 
     /* NAVBAR */
@@ -108,7 +100,7 @@
     }
 
     /* HERO */
-    .hero{
+   .hero{
       min-height:100vh;
       display:flex;
       align-items:center;
@@ -118,14 +110,14 @@
       padding:0 20px;
     }
 
-    .hero h2{
+   .hero h2{
       font-size:25px;
       color:#00f7ff;
       margin-bottom:15px;
       letter-spacing:3px;
     }
 
-    .hero h1{
+   .hero h1{
       font-size:75px;
       font-weight:700;
       background:linear-gradient(to right,#00f7ff,#ff00ff);
@@ -135,32 +127,30 @@
     }
 
     /* TYPING EFFECT */
-    .typing{
+   .typing{
       font-size:28px;
       color:#ffffff;
       margin-bottom:30px;
       height:40px;
     }
 
-    .cursor{
+   .cursor{
       color:#00f7ff;
-      animation:blink2 .7s infinite;
+      animation:blink2.7s infinite;
     }
 
     @keyframes blink2{
-      50%{
-        opacity:0;
-      }
+      50%{ opacity:0; }
     }
 
-    .hero p{
+   .hero p{
       max-width:700px;
       color:#cfcfcf;
       line-height:1.8;
       margin-bottom:40px;
     }
 
-    .btn{
+   .btn{
       padding:15px 40px;
       border:none;
       border-radius:50px;
@@ -170,9 +160,11 @@
       cursor:pointer;
       transition:0.4s;
       box-shadow:0 0 25px rgba(0,247,255,0.5);
+      text-decoration: none;
+      display: inline-block;
     }
 
-    .btn:hover{
+   .btn:hover{
       transform:translateY(-7px) scale(1.05);
       box-shadow:0 0 40px rgba(255,0,255,0.7);
     }
@@ -182,7 +174,7 @@
       padding:100px 8%;
     }
 
-    .title{
+   .title{
       text-align:center;
       font-size:45px;
       margin-bottom:60px;
@@ -190,13 +182,13 @@
       text-shadow:0 0 20px #00f7ff;
     }
 
-    .cards{
+   .cards{
       display:grid;
       grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
       gap:30px;
     }
 
-    .card{
+   .card{
       background:rgba(255,255,255,0.05);
       border:1px solid rgba(255,255,255,0.1);
       backdrop-filter:blur(12px);
@@ -207,43 +199,44 @@
       overflow:hidden;
     }
 
-    .card::before{
+   .card::before{
       content:'';
       position:absolute;
       width:150%;
       height:150%;
-      background:linear-gradient(
-      45deg,
-      transparent,
-      rgba(0,247,255,0.2),
-      transparent
-      );
-
+      background:linear-gradient(45deg, transparent, rgba(0,247,255,0.2), transparent);
       transform:rotate(45deg);
       top:-120%;
       left:-120%;
       transition:0.8s;
     }
 
-    .card:hover::before{
+   .card:hover::before{
       top:100%;
       left:100%;
     }
 
-    .card:hover{
+   .card:hover{
       transform:translateY(-10px);
       box-shadow:0 0 35px rgba(0,247,255,0.3);
     }
 
-    .card h3{
+   .card h3{
       margin-bottom:15px;
       color:#00f7ff;
       font-size:25px;
     }
 
-    .card p{
+   .card p{
       color:#d6d6d6;
       line-height:1.7;
+    }
+
+    #contact p{
+      text-align: center;
+      font-size: 18px;
+      margin: 10px 0;
+      color: #cfcfcf;
     }
 
     footer{
@@ -255,19 +248,9 @@
 
     /* RESPONSIVE */
     @media(max-width:768px){
-
-      .hero h1{
-        font-size:50px;
-      }
-
-      .typing{
-        font-size:20px;
-      }
-
-      nav ul{
-        gap:15px;
-      }
-
+     .hero h1{ font-size:50px; }
+     .typing{ font-size:20px; }
+      nav ul{ gap:15px; }
     }
 
   </style>
@@ -282,47 +265,19 @@
     <div class="loader-text">LOADING SYSTEM...</div>
   </div>
 
-  <!-- MUSIC -->
-  <audio id="music" loop>
-    <source src="musik.mp3" type="audio/mp3">
-</audio>
-
-<button onclick="document.getElementById('music').play()">
-🎵 Play Music
-</button>
-
   <!-- NAVBAR -->
   <nav>
-  <h1>ATENG</h1>
-
+    <h1>ATENG</h1>
     <ul>
       <li><a href="#home">Home</a></li>
       <li><a href="#skills">Skill</a></li>
-      <li><a href="#project">Project</a></li>
       <li><a href="#contact">Contact</a></li>
     </ul>
   </nav>
 
   <!-- HERO -->
   <section id="home" class="hero">
-    ...
-  </section>
-
-  <section id="skills">
-    ...
-  </section>
-
-  <section id="project">
-    ...
-  </section>
-
-  <section id="contact">
-    ...
-  </section>
-  
-
     <h2>SELAMAT DATANG DI PORTOFOLIO SAYA</h2>
-
     <h1>Muhammad Aldes Zulfiqar</h1>
 
     <!-- TYPING -->
@@ -335,69 +290,44 @@
       aldes adalah manusia dan manusia adalah aldes.
     </p>
 
-    <a href="#skills" class="btn">
-Explore Portfolio
-</a>
-
+    <a href="#skills" class="btn">Explore Portfolio</a>
   </section>
 
   <!-- SKILL -->
   <section id="skills">
-
     <h2 class="title">MY SKILLS</h2>
-
-  <div class="card">
-    
-    <div class="card">
-<h3>Web Development</h3>
-<p>
-Membangun website modern, responsif, dan profesional menggunakan HTML, CSS, dan JavaScript.
-</p>
-</div>
-
-<div class="card">
-  
-  <div class="card">
-<h3>Graphic Design</h3>
-<p>
-Mendesain poster, logo, banner, dan antarmuka dengan tampilan modern.
-</p>
-</div>
-
-<div class="card">
-
-  <div class="card">
-<h3>Cyber Security</h3>
-<p>
-Mempelajari keamanan jaringan, ethical hacking, serta perlindungan sistem dari ancaman siber.
-</p>
-</div>
-
+    <div class="cards">
 
       <div class="card">
+        <h3>Web Development</h3>
+        <p>Membangun website modern, responsif, dan profesional menggunakan HTML, CSS, dan JavaScript.</p>
+      </div>
 
-        <div class="card">
+      <div class="card">
+        <h3>Graphic Design</h3>
+        <p>Mendesain poster, logo, banner, dan antarmuka dengan tampilan modern.</p>
+      </div>
+
+      <div class="card">
+        <h3>Cyber Security</h3>
+        <p>Mempelajari keamanan jaringan, ethical hacking, serta perlindungan sistem dari ancaman siber.</p>
+      </div>
+
+      <div class="card">
         <h3>Owner Ekport</h3>
-        <p>
-          Mendesain tampilan futuristic, cyberpunk, dan elegant.
-        </p>
+        <p>Mendesain tampilan futuristic, cyberpunk, dan elegant.</p>
       </div>
 
     </div>
-
   </section>
-  
+
+  <!-- CONTACT -->
   <section id="contact">
-
-<h2 class="title">CONTACT</h2>
-
-<p>Email : aldeszulfiqar12@gmail.com</p>
-
-<p>Instagram : @aldeszlfk.rr</p>
-
-<p>GitHub : github.com.aldes-net</p>
-
-</section>
+    <h2 class="title">CONTACT</h2>
+    <p>Email : aldeszulfiqar12@gmail.com</p>
+    <p>Instagram : @aldeszlfk.rr</p>
+    <p>GitHub : github.com/aldes-net</p>
+  </section>
 
   <footer>
     © 2026 Aldes Zulfiqar | Futuristic Portfolio
@@ -405,73 +335,53 @@ Mempelajari keamanan jaringan, ethical hacking, serta perlindungan sistem dari a
 
   <!-- JAVASCRIPT -->
   <script>
-
     // LOADING SCREEN
     window.addEventListener("load",function(){
-
-     setTimeout(()=>{
-    document.getElementById("loader").style.opacity="0";
-
-    setTimeout(()=>{
-        document.getElementById("loader").style.display="none";
-    },500);
-
-},1800);
+      setTimeout(()=>{
+        document.getElementById("loader").style.opacity="0";
+        setTimeout(()=>{
+            document.getElementById("loader").style.display="none";
+        },500);
+      },1800);
     });
 
-    // TYPING EFFECT
+    // TYPING EFFECT - UDAH DIBENERIN BIAR LAMBAT
     const words = [
-    "Web Developer",
-    "Cyber Security",
-    "Graphic Designer",
-    "Future Software Engineer"
+      "Web Developer",
+      "Cyber Security",
+      "Graphic Designer",
+      "Future Software Engineer"
     ];
 
     let i = 0;
     let j = 0;
-    let currentWord = "";
     let isDeleting = false;
+    const speed = 150; // Kecepatan ngetik 150ms
+    const deleteSpeed = 60; // Kecepatan hapus 60ms
+    const delay = 2000; // Jeda 2 detik pas selesai
 
     const text = document.getElementById("text");
 
     function type(){
-
-      currentWord = words[i];
+      let currentWord = words[i];
 
       if(isDeleting){
-
-        text.textContent = currentWord.substring(0,j--);
-
-      }else{
-
-        text.textContent = currentWord.substring(0,j++);
-
-      }
-
-      if(!isDeleting && j === currentWord.length){
-
-        isDeleting = true;
-
-        setTimeout(type,100);
-
-      }
-
-      else if(isDeleting && j === 0){
-
-        isDeleting = false;
-
-        i++;
-
-        if(i === words.length){
-
-          i = 0;
-
+        text.textContent = currentWord.substring(0, j--);
+        setTimeout(type, deleteSpeed);
+      } else {
+        text.textContent = currentWord.substring(0, j++);
+        if(j === currentWord.length){
+          isDeleting = true;
+          setTimeout(type, delay); // jeda 2 detik
+        } else {
+          setTimeout(type, speed);
         }
-
       }
 
-      setTimeout(type,isDeleting ? 60 : 120);
-
+      if(isDeleting && j === 0){
+        isDeleting = false;
+        i = (i + 1) % words.length;
+      }
     }
 
     type();
@@ -479,21 +389,11 @@ Mempelajari keamanan jaringan, ethical hacking, serta perlindungan sistem dari a
     // PARTICLES
     particlesJS("particles-js", {
       "particles": {
-        "number": {
-          "value": 90
-        },
-        "color": {
-          "value": "#00f7ff"
-        },
-        "shape": {
-          "type": "circle"
-        },
-        "opacity": {
-          "value": 0.5
-        },
-        "size": {
-          "value": 3
-        },
+        "number": { "value": 90 },
+        "color": { "value": "#00f7ff" },
+        "shape": { "type": "circle" },
+        "opacity": { "value": 0.5 },
+        "size": { "value": 3 },
         "line_linked": {
           "enable": true,
           "distance": 150,
@@ -507,7 +407,6 @@ Mempelajari keamanan jaringan, ethical hacking, serta perlindungan sistem dari a
         }
       }
     });
-
   </script>
 
 </body>
