@@ -289,3 +289,179 @@
 
   <!-- NAVBAR -->
   <nav>
+  <h1>ATENG</h1>
+
+    <ul>
+      <li><a href="#">Home</a></li>
+      <li><a href="#">Skill</a></li>
+      <li><a href="#">Project</a></li>
+      <li><a href="#">Contact</a></li>
+    </ul>
+  </nav>
+
+  <!-- HERO -->
+  <section class="hero">
+
+    <h2>SELAMAT DATANG DI PORTOFOLIO SAYA</h2>
+
+    <h1>Muhammad Aldes Zulfiqar</h1>
+
+    <!-- TYPING -->
+    <div class="typing">
+      <span id="text"></span>
+      <span class="cursor">|</span>
+    </div>
+
+    <p>
+      aldes adalah manusia dan manusia adalah aldes.
+    </p>
+
+    <button class="btn">
+      Explore Portfolio
+    </button>
+
+  </section>
+
+  <!-- SKILL -->
+  <section>
+
+    <h2 class="title">MY SKILLS</h2>
+
+    <div class="cards">
+
+      <div class="card">
+        <h3>Desain Grafis</h3>
+        <p>
+          Membuat struktur website modern dan professional.
+        </p>
+      </div>
+
+      <div class="card">
+        <h3>Owner Ekport</h3>
+        <p>
+          Mendesain tampilan futuristic, cyberpunk, dan elegant.
+        </p>
+      </div>
+
+      <div class="card">
+        <h3>Cyber Security</h3>
+        <p>
+          Membuat animasi website menjadi hidup dan interaktif.
+        </p>
+      </div>
+
+    </div>
+
+  </section>
+
+  <footer>
+    © 2026 Aldes Zulfiqar | Futuristic Portfolio
+  </footer>
+
+  <!-- JAVASCRIPT -->
+  <script>
+
+    // LOADING SCREEN
+    window.addEventListener("load",function(){
+
+      setTimeout(() => {
+
+        document.getElementById("loader").style.display="none";
+
+      },20);
+
+    });
+
+    // TYPING EFFECT
+    const words = [
+      "Saya Sangat",
+      "Mencintai",
+      "Nasha",
+      "Saya pengen dia menjadi pacar saya"
+    ];
+
+    let i = 0;
+    let j = 0;
+    let currentWord = "";
+    let isDeleting = false;
+
+    const text = document.getElementById("text");
+
+    function type(){
+
+      currentWord = words[i];
+
+      if(isDeleting){
+
+        text.textContent = currentWord.substring(0,j--);
+
+      }else{
+
+        text.textContent = currentWord.substring(0,j++);
+
+      }
+
+      if(!isDeleting && j === currentWord.length){
+
+        isDeleting = true;
+
+        setTimeout(type,100);
+
+      }
+
+      else if(isDeleting && j === 0){
+
+        isDeleting = false;
+
+        i++;
+
+        if(i === words.length){
+
+          i = 0;
+
+        }
+
+      }
+
+      setTimeout(type,isDeleting ? 60 : 120);
+
+    }
+
+    type();
+
+    // PARTICLES
+    particlesJS("particles-js", {
+      "particles": {
+        "number": {
+          "value": 90
+        },
+        "color": {
+          "value": "#00f7ff"
+        },
+        "shape": {
+          "type": "circle"
+        },
+        "opacity": {
+          "value": 0.5
+        },
+        "size": {
+          "value": 3
+        },
+        "line_linked": {
+          "enable": true,
+          "distance": 150,
+          "color": "#00f7ff",
+          "opacity": 0.4,
+          "width": 1
+        },
+        "move": {
+          "enable": true,
+          "speed": 3
+        }
+      }
+    });
+
+  </script>
+
+</body>
+</html>
